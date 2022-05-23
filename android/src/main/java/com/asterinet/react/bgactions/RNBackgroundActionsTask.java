@@ -79,12 +79,12 @@ final public class RNBackgroundActionsTask extends HeadlessJsTaskService {
         if (extras == null) {
             throw new IllegalArgumentException("Extras cannot be null");
         }
-        final BackgroundTaskOptions bgOptions = new BackgroundTaskOptions(extras);
-        createNotificationChannel(bgOptions.getTaskTitle(), bgOptions.getTaskDesc()); // Necessary creating channel for API 26+
-        // Create the notification
-        final Notification notification = buildNotification(this, bgOptions);
+        // final BackgroundTaskOptions bgOptions = new BackgroundTaskOptions(extras);
+        // createNotificationChannel(bgOptions.getTaskTitle(), bgOptions.getTaskDesc()); // Necessary creating channel for API 26+
+        // // Create the notification
+        // final Notification notification = buildNotification(this, bgOptions);
 
-        startForeground(SERVICE_NOTIFICATION_ID, notification);
+        // startForeground(SERVICE_NOTIFICATION_ID, notification);
         return super.onStartCommand(intent, flags, startId);
     }
 

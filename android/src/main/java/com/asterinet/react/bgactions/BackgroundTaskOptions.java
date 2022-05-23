@@ -27,22 +27,22 @@ public final class BackgroundTaskOptions {
         // Get taskTitle
         try {
             if (options.getString("taskTitle") == null)
-                throw new IllegalArgumentException();
+                // throw new IllegalArgumentException();
         } catch (Exception e) {
-            throw new IllegalArgumentException("Task title cannot be null");
+            // throw new IllegalArgumentException("Task title cannot be null");
         }
         // Get taskDesc
         try {
             if (options.getString("taskDesc") == null)
-                throw new IllegalArgumentException();
+                // throw new IllegalArgumentException();
         } catch (Exception e) {
-            throw new IllegalArgumentException("Task description cannot be null");
+            // throw new IllegalArgumentException("Task description cannot be null");
         }
         // Get iconInt
         try {
             final ReadableMap iconMap = options.getMap("taskIcon");
             if (iconMap == null)
-                throw new IllegalArgumentException();
+                // throw new IllegalArgumentException();
             final String iconName = iconMap.getString("name");
             final String iconType = iconMap.getString("type");
             String iconPackage;
@@ -57,9 +57,9 @@ public final class BackgroundTaskOptions {
             final int iconInt = reactContext.getResources().getIdentifier(iconName, iconType, iconPackage);
             extras.putInt("iconInt", iconInt);
             if (iconInt == 0)
-                throw new IllegalArgumentException();
+                // throw new IllegalArgumentException();
         } catch (Exception e) {
-            throw new IllegalArgumentException("Task icon not found");
+            // throw new IllegalArgumentException("Task icon not found");
         }
         // Get color
         try {
